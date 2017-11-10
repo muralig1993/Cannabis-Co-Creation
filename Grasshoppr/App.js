@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { Icon, Button, Content, Container } from 'native-base';
-// import SvgUri from 'react-native-svg-uri';
+import { Button, Content, Container } from 'native-base';
+import { G, Path } from 'react-native-svg';
+import Icon from './Icon';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,11 +23,13 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Icon size={25} color={'#fff'} name={'ios-chatbubbles'}/>
+        <Icon name="Leaf" height="200" width="200" />
+        <G><Path d="M0 45h90L45 0 0 45z"/><Path d="M0 55h90l-45 45L0 55z"/></G>
         <Text
         style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '90%', marginTop: 10}}
         >Email</Text>
         <TextInput
+          underlineColorAndroid='transparent'
           style={{height: 40, width: '90%', borderColor: '#474a4f', borderBottomWidth: 1}}
           onChangeText={(text) => this.setState({text})}
           placeholder='your email'
@@ -35,6 +38,7 @@ export default class App extends React.Component {
         style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '90%', marginTop: 10}}
         >Password</Text>
         <TextInput
+          underlineColorAndroid='transparent'
           style={{height: 40, width: '90%', borderColor: '#474a4f', borderBottomWidth: 1}}
           onChangeText={(text) => this.setState({text})}
           placeholder='your password'
@@ -45,7 +49,7 @@ export default class App extends React.Component {
           </Button>
         </View>
         <View style={{width: '90%', paddingTop: 10}}>
-          <Button block success>
+          <Button style={{height: 50, width: '100%'}} block success>
             <Text style={{color: 'white'}}>Sign Up</Text>
           </Button>
         </View>
@@ -62,3 +66,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+//<Icon ios='ios-menu' android="md-menu" style={{fontSize: 50, color: 'black'}}/>
