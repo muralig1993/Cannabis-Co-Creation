@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-const CreateProfile = () => (
+const Sort = () => (
   <View>
     <Text>
-      Create Profile
+      Sort
     </Text>
   </View>
 )
 
-export default CreateProfile
+export default Sort
