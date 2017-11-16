@@ -11,28 +11,40 @@ import {
   Section,
   TableView
 } from 'react-native-tableview-simple';
+import StoreCell from './StoreCell';
+import DATA from '../data/stores.json';
 
 export default class Stores extends React.Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
-          <View style={{
-            backgroundColor: '#37474F',
-            height: 500,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <View style={{
-              backgroundColor: '#ffc107',
-              width: 80,
-              height: 80,
-              borderRadius: 10
-            }}></View>
-          </View>
           <TableView>
             <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
-              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+            {
+              DATA.map((cellData, i) => (
+                <StoreCell
+                  key={i}
+                  name={cellData.name}
+                  location={cellData.location}
+                  distance={cellData.distance}
+                  THC={cellData.THC}
+                  CBD={cellData.CBD}
+                  CDN={cellData.CDN}
+                  strain={cellData.strain}
+                  prevValue={cellData.prevValue}
+                  value={cellData.value}
+                  valueOff={cellData.valueOff}
+                  likes={cellData.likes}
+                  claims={cellData.claims}
+                  stock={cellData.stock}
+                  quantity={cellData.quantity}
+                  type={cellData.type}
+                  imageURL={cellData.imageURL}
+                  titleTextColor="#007AFF"
+                  onPress={() => console.log('open Help/FAQ')}
+                />
+              ))
+            }
             </Section>
           </TableView>
       </ScrollView>

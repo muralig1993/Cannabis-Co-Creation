@@ -39,7 +39,6 @@ export default class App extends React.Component<{}> {
             key="login"
             component={Login}
             title="Grasshoppr"
-            initial
           />
           <Scene
             key="editprofile"
@@ -62,6 +61,7 @@ export default class App extends React.Component<{}> {
             key="stream"
             tabs
             tabBarStyle={{ backgroundColor: '#FFFFFF'}}
+            initial
           >
             <Scene key="deals" title="Deals" icon={TabIcon}>
               <Scene key="d"

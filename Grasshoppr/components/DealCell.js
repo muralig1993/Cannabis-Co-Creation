@@ -2,7 +2,8 @@ import React from 'react'
 import {
   Text,
   View,
-  StyleSheet
+  StyleSheet,
+  Image
 } from 'react-native';
 import {
   Cell
@@ -10,6 +11,119 @@ import {
 import { Button } from 'native-base';
 import Icon from '../Icon';
 import { Actions } from 'react-native-router-flux';
+
+const Header = (props) => (
+  <View
+    style={{paddingVertical: 0, width: '100%'}}
+  >
+    <View
+      style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
+    >
+      <Text
+        style={styles.title}
+      >
+        {props.name}
+      </Text>
+      <Text
+        style={styles.text}
+      >
+        {props.distance} miles away
+      </Text>
+    </View>
+    <View
+      style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
+    >
+      <Text
+        style={styles.text}
+      >
+        {props.location}
+      </Text>
+      <Text
+        style={styles.text}
+      >
+        {props.type}
+      </Text>
+    </View>
+    <View
+      style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
+    >
+      <Text style={styles.text}>THC: {props.THC}% CBD: {props.CBD}% CBN: {props.CBN}%</Text>
+      <Text
+        style={styles.crossed}
+      >
+        ${props.prevValue}
+      </Text>
+    </View>
+    <View
+      style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
+    >
+      <Text style={styles.text}>{props.strain}</Text>
+      <Text style={styles.valueText}>${props.value}</Text>
+    </View>
+  </View>
+)
+
+const Footer = (props) => (
+  <View
+    style={{ alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', width: '100%', paddingTop: 20 }}
+  >
+    <Text
+      style={styles.footerText}
+    >
+      <Icon
+        name="Heart"
+        height="20"
+        width="20"
+      /> {props.likes} likes
+    </Text>
+    <Text
+      style={styles.footerText}
+    >
+      {props.claims} claims
+    </Text>
+    <Text
+      style={styles.footerText}
+    >
+      {props.stock}
+    </Text>
+  </View>
+)
+
+const Body = (props) => (
+  <View
+    style={{ alignItems: 'flex-end', flexDirection: 'row', paddingVertical: 10, width: '100%' }}
+  >
+    <Image
+      source={require('../assets/bluedream.png')}
+      style={{width: '30%', height: '100%'}}
+    />
+    <View
+      style={{ flexDirection: 'column', width: '65%', marginLeft: '5%', height: '100%'}}
+    >
+      <Header {...props}/>
+      <View
+        style={{ justifyContent: 'space-between', flexDirection: 'row', paddingTop: 10, width: '100%' }}
+      >
+        <View
+          style={{ alignItems: 'flex-start', justifyContent: 'center', flexDirection: 'column', paddingVertical: 0, width: '50%' }}
+        >
+          <Text style={styles.quantityText}>{props.quantity} grams</Text>
+        </View>
+        <View
+          style={{width: '50%', alignItems: 'flex-end', justifyContent: 'space-between', flexDirection: 'column', height: '100%'}}
+        >
+          <Button
+            style={{height: 50, width: '100%'}}
+            block success
+            onPress={() => Actions.deal()}
+          >
+            <Text style={{color: 'white'}}>GET</Text>
+          </Button>
+        </View>
+      </View>
+    </View>
+  </View>
+)
 
 const DealCell = (props) => (
   <Cell
@@ -19,122 +133,8 @@ const DealCell = (props) => (
       <View
         style={{ alignItems: 'flex-start', flexDirection: 'column', paddingVertical: 0, width: '100%' }}
       >
-        <View
-          style={{ alignItems: 'flex-start', justifyContent: 'space-between', flexDirection: 'row', width: '100%' }}
-        >
-          <Text
-            allowFontScaling
-            numberOfLines={1}
-            style={styles.title}
-          >
-          {props.name}
-          </Text>
-          <Text
-            allowFontScaling
-            numberOfLines={1}
-            style={styles.text}
-          >
-          {props.distance} miles away
-          </Text>
-        </View>
-        <View
-          style={{ alignItems: 'flex-start', flexDirection: 'column' }}
-        >
-          <View
-            style={{flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}
-          >
-            <View>
-              <Text
-                allowFontScaling
-                numberOfLines={2}
-                style={styles.text}
-              >
-              {props.location}
-              </Text>
-              <Text
-                allowFontScaling
-                numberOfLines={4}
-                style={styles.text}
-              >
-              THC: {props.THC}% CBD: {props.CBD}% CBN: {props.CBN}%
-              </Text>
-            </View>
-            <View>
-              <Text
-                allowFontScaling
-                numberOfLines={4}
-                style={styles.amountText}
-              >
-              {props.amount} grams
-              </Text>
-            </View>
-          </View>
-          <View
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              width: '100%' }}
-          >
-            <View>
-              <Text
-                allowFontScaling
-                numberOfLines={4}
-                style={styles.text}
-              >
-              {props.strain}
-              </Text>
-              <Text
-                allowFontScaling
-                numberOfLines={1}
-                style={styles.text}
-              >
-              <Text style={styles.crossed}>${props.prevValue}</Text>
-              </Text>
-              <Text
-                allowFontScaling
-                numberOfLines={2}
-                style={styles.text}
-              >
-              ${props.value} {props.valueOff}% off
-              </Text>
-            </View>
-            <View style={{width: '75%', flexDirection: 'row'}}>
-              <View
-                style={{width: '40%', flexDirection: 'column', justifyContent: 'center'}}
-              >
-                <Text>{props.claims} claims</Text>
-                <Text>{props.stock}</Text>
-              </View>
-              <Button
-                style={{width: '60%'}}
-                block success
-                onPress={() => Actions.signup()}
-              >
-                <Text style={{color: 'white'}}>Get Deal</Text>
-              </Button>
-            </View>
-          </View>
-          <View
-            style={{flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}
-          >
-            <Text
-              allowFontScaling
-              numberOfLines={2}
-              style={styles.text}
-            >
-            <Icon name="Heart" height="15" width="15" />
-            {props.likes} likes
-            </Text>
-            <Text
-              allowFontScaling
-              numberOfLines={2}
-              style={styles.text}
-            >
-            {props.type}
-            </Text>
-          </View>
-        </View>
+        <Body {...props}/>
+        <Footer {...props}/>
       </View>
     }
   />
@@ -153,15 +153,27 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '100'
   },
+  quantityText: {
+    color: '#5F5F6B',
+    fontFamily: 'Avenir-Heavy',
+    fontSize: 20,
+    fontWeight: '700'
+  },
   crossed: {
     color: '#5F5F6B',
     textDecorationLine: 'line-through'
   },
-  amountText: {
+  footerText: {
     color: '#5F5F6B',
     fontFamily: 'Avenir',
-    fontSize: 14,
-    fontWeight: '700'
+    fontSize: 18,
+    fontWeight: '600'
+  },
+  valueText: {
+    color: '#5F5F6B',
+    fontFamily: 'Avenir',
+    fontSize: 22,
+    fontWeight: '900'
   }
 });
 

@@ -13,7 +13,7 @@
     "likes":"32",
     "claims":"386",
     "stock":"In Stock",
-    "amount":"3",
+    "quantity":"3",
     "type":"MED",
     "imageURL":""
   },
@@ -31,7 +31,7 @@
     "likes":"20",
     "claims":"310",
     "stock":"Running Low!",
-    "amount":"0.25",
+    "quantity":"0.25",
     "type":"REC",
     "imageURL":""
   }

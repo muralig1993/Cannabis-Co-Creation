@@ -38,7 +38,7 @@ export default class Deals extends React.Component<{}> {
                   likes={cellData.likes}
                   claims={cellData.claims}
                   stock={cellData.stock}
-                  amount={cellData.amount}
+                  quantity={cellData.quantity}
                   type={cellData.type}
                   imageURL={cellData.imageURL}
                   titleTextColor="#007AFF"
