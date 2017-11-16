@@ -11,6 +11,8 @@ import {
   Section,
   TableView
 } from 'react-native-tableview-simple';
+import DealCell from './DealCell';
+import DATA from '../data/deals.json';
 
 
 export default class Deals extends React.Component<{}> {
@@ -19,8 +21,31 @@ export default class Deals extends React.Component<{}> {
       <ScrollView contentContainerStyle={styles.stage}>
           <TableView>
             <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
-              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+            {
+              DATA.map((cellData, i) => (
+                <DealCell
+                  key={i}
+                  name={cellData.name}
+                  location={cellData.location}
+                  distance={cellData.distance}
+                  THC={cellData.THC}
+                  CBD={cellData.CBD}
+                  CDN={cellData.CDN}
+                  strain={cellData.strain}
+                  prevValue={cellData.prevValue}
+                  value={cellData.value}
+                  valueOff={cellData.valueOff}
+                  likes={cellData.likes}
+                  claims={cellData.claims}
+                  stock={cellData.stock}
+                  amount={cellData.amount}
+                  type={cellData.type}
+                  imageURL={cellData.imageURL}
+                  titleTextColor="#007AFF"
+                  onPress={() => console.log('open Help/FAQ')}
+                />
+              ))
+            }
             </Section>
           </TableView>
       </ScrollView>

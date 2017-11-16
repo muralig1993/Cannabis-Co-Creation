@@ -1,6 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import { Button, Content, Container } from 'native-base';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View
+ } from 'react-native';
+import { Button } from 'native-base';
 import { G, Path } from 'react-native-svg';
 import Icon from '../Icon';
 import { Actions } from 'react-native-router-flux';
