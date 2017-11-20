@@ -3,6 +3,7 @@ import { Router, Scene, Actions } from 'react-native-router-flux';
 // import { Card, Navigation } from 'react-router-navigation'
 // import Profile from './Components/Profile'
 import { StyleSheet, Text, Platform } from 'react-native';
+import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
 import Discover from './components/Discover'
 import Deals from './components/Deals'
@@ -31,19 +32,29 @@ export default class App extends React.Component<{}> {
   }
   render() {
     return (
-      <Router>
+      <Router
+      barButtonTextStyle={styles.barButtonTextStyle}
+      barButtonIconStyle={styles.barButtonIconStyle}
+      >
         <Scene key="root"
         title={this.state.currentScene}
         initial
-        titleStyle={{color: 'white'}}
-        navigationBarStyle={{ backgroundColor: '#351B40', paddingVertical: 10 }}
-        leftButtonImage={require('./assets/store.png')}
+        titleStyle={styles.title}
+        navigationBarStyle={{ backgroundColor: '#351B40', height: 70}}
+        rightTitleStyle={{color: 'white'}}
+        rightTitle='profile'
+        onRight={ ()=> Actions.profile() }
         >
           <Scene
             key="login"
             component={Login}
             title="Grasshoppr"
 
+          />
+          <Scene
+            key="profile"
+            component={Profile}
+            title="Profile"
           />
           <Scene
             key="editprofile"
@@ -54,6 +65,11 @@ export default class App extends React.Component<{}> {
             key="signup"
             component={Signup}
             title="Create Profile"
+          />
+          <Scene
+            key="deal"
+            component={Deal}
+            title="Deal"
           />
           <Scene
             key="modal"
@@ -74,6 +90,11 @@ export default class App extends React.Component<{}> {
 }
 
 const styles = StyleSheet.create({
+  title: {
+    color: 'white',
+    fontFamily: 'Avenir',
+    fontSize: 22
+  },
   navbar: {
     ...Platform.select({
           ios: {
@@ -83,5 +104,11 @@ const styles = StyleSheet.create({
             height: 54,
           },
         }),
+  },
+  barButtonTextStyle: {
+    color: 'white'
+  },
+  barButtonIconStyle: {
+    color: 'white'
   }
 })

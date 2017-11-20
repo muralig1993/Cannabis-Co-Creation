@@ -96,8 +96,8 @@ const Body = (props) => (
   >
     <Image
       source={require('../assets/bluedream.png')}
-      resizeMode="contain"
-      style={{ flex: 1}}
+      resizeMode="cover"
+      style={{height: 170, width: '35%'}}
     />
     <View
       style={{ flexDirection: 'column', width: '60%', marginLeft: '5%', height: '100%'}}
@@ -115,11 +115,11 @@ const Body = (props) => (
           style={{width: '50%', alignItems: 'flex-end', justifyContent: 'space-between', flexDirection: 'column', height: '100%'}}
         >
           <Button
-            style={{height: 50, width: '100%'}}
+            style={styles.buttonStyle}
             block success
             onPress={() => Actions.deal()}
           >
-            <Text style={{color: 'white'}}>GET</Text>
+            <Text style={{color: 'black'}}>GET</Text>
           </Button>
         </View>
       </View>
@@ -182,6 +182,14 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontSize: 22,
     fontWeight: '900'
+  },
+  buttonStyle: {
+    height: 50,
+    width: '100%',
+    backgroundColor: 'white',
+    borderWidth: 4,
+    borderColor: '#351B40',
+    borderRadius: 5,
   }
 });
 

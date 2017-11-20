@@ -34,5 +34,41 @@
     "quantity":"0.25",
     "type":"REC",
     "imageURL":""
+  },
+  {
+    "name":"Indian Terrain",
+    "location":"Elements Boulder Care Station",
+    "distance":"4",
+    "THC":"14",
+    "CBD":"10",
+    "CBN":"null",
+    "strain":"Indica",
+    "prevValue":"40",
+    "value":"24",
+    "valueOff":"25",
+    "likes":"20",
+    "claims":"310",
+    "stock":"Running Low!",
+    "quantity":"0.25",
+    "type":"REC",
+    "imageURL":""
+  },
+  {
+    "name":"Indian Terrain",
+    "location":"Elements Boulder Care Station",
+    "distance":"4",
+    "THC":"14",
+    "CBD":"10",
+    "CBN":"null",
+    "strain":"Indica",
+    "prevValue":"40",
+    "value":"24",
+    "valueOff":"25",
+    "likes":"20",
+    "claims":"310",
+    "stock":"Running Low!",
+    "quantity":"0.25",
+    "type":"REC",
+    "imageURL":""
   }
 ]
