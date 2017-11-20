@@ -25,22 +25,12 @@ export default class Stores extends React.Component {
                 <StoreCell
                   key={i}
                   name={cellData.name}
-                  location={cellData.location}
+                  rating={cellData.rating}
+                  status={cellData.status}
+                  city={cellData.city}
                   distance={cellData.distance}
-                  THC={cellData.THC}
-                  CBD={cellData.CBD}
-                  CDN={cellData.CDN}
-                  strain={cellData.strain}
-                  prevValue={cellData.prevValue}
-                  value={cellData.value}
-                  valueOff={cellData.valueOff}
-                  likes={cellData.likes}
-                  claims={cellData.claims}
-                  stock={cellData.stock}
-                  quantity={cellData.quantity}
                   type={cellData.type}
                   imageURL={cellData.imageURL}
-                  titleTextColor="#007AFF"
                   onPress={() => console.log('open Help/FAQ')}
                 />
               ))

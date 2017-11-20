@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Scene, Actions } from 'react-native-router-flux';
 // import { Card, Navigation } from 'react-router-navigation'
 // import Profile from './Components/Profile'
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, Platform } from 'react-native';
 import EditProfile from './components/EditProfile'
 import Discover from './components/Discover'
 import Deals from './components/Deals'
@@ -34,11 +34,16 @@ export default class App extends React.Component<{}> {
       <Router>
         <Scene key="root"
         title={this.state.currentScene}
+        initial
+        titleStyle={{color: 'white'}}
+        navigationBarStyle={{ backgroundColor: '#351B40', paddingVertical: 10 }}
+        leftButtonImage={require('./assets/store.png')}
         >
           <Scene
             key="login"
             component={Login}
             title="Grasshoppr"
+
           />
           <Scene
             key="editprofile"
@@ -59,28 +64,24 @@ export default class App extends React.Component<{}> {
           />
           <Scene
             key="stream"
-            tabs
-            tabBarStyle={{ backgroundColor: '#FFFFFF'}}
-            initial
+            component={Stream}
           >
-            <Scene key="deals" title="Deals" icon={TabIcon}>
-              <Scene key="d"
-                component={Deals}
-              />
-            </Scene>
-            <Scene key="stores" title="Stores" icon={TabIcon}>
-              <Scene key="s"
-                component={Stores}
-              />
-            </Scene>
-            <Scene key="discover" title="Discover" icon={TabIcon}>
-              <Scene key="d"
-                component={Discover}
-              />
-            </Scene>
           </Scene>
         </Scene>
       </Router>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  navbar: {
+    ...Platform.select({
+          ios: {
+            height: 64,
+          },
+          android: {
+            height: 54,
+          },
+        }),
+  }
+})

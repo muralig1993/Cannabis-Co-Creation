@@ -11,6 +11,7 @@ import {
 import { Button } from 'native-base';
 import Icon from '../Icon';
 import { Actions } from 'react-native-router-flux';
+import Lightbox from 'react-native-lightbox';
 
 const Header = (props) => (
   <View
@@ -65,7 +66,7 @@ const Header = (props) => (
 
 const Footer = (props) => (
   <View
-    style={{ alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', width: '100%', paddingTop: 20 }}
+    style={{ alignItems: 'flex-end', justifyContent: 'space-between', flexDirection: 'row', width: '100%', paddingTop: 20 }}
   >
     <Text
       style={styles.footerText}
@@ -82,7 +83,7 @@ const Footer = (props) => (
       {props.claims} claims
     </Text>
     <Text
-      style={styles.footerText}
+      style={styles.stockText}
     >
       {props.stock}
     </Text>
@@ -91,14 +92,15 @@ const Footer = (props) => (
 
 const Body = (props) => (
   <View
-    style={{ alignItems: 'flex-end', flexDirection: 'row', paddingVertical: 10, width: '100%' }}
+    style={{ alignItems: 'flex-end', flexDirection: 'row', paddingTop: 10, width: '100%' }}
   >
     <Image
       source={require('../assets/bluedream.png')}
-      style={{width: '30%', height: '100%'}}
+      resizeMode="contain"
+      style={{ flex: 1}}
     />
     <View
-      style={{ flexDirection: 'column', width: '65%', marginLeft: '5%', height: '100%'}}
+      style={{ flexDirection: 'column', width: '60%', marginLeft: '5%', height: '100%'}}
     >
       <Header {...props}/>
       <View
@@ -166,7 +168,13 @@ const styles = StyleSheet.create({
   footerText: {
     color: '#5F5F6B',
     fontFamily: 'Avenir',
-    fontSize: 18,
+    fontSize: 20,
+    fontWeight: '600'
+  },
+  stockText: {
+    color: '#5F5F6B',
+    fontFamily: 'Avenir',
+    fontSize: 12,
     fontWeight: '600'
   },
   valueText: {
