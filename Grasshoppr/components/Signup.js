@@ -55,11 +55,11 @@ export default class Signup extends React.Component {
         />
         <View style={{width: '90%', paddingTop: 10}}>
           <Button
-          style={{height: 50, width: '100%'}}
+          style={styles.buttonStyle}
           block success
           onPress={() => Actions.signup()}
           >
-            <Text style={{color: 'white'}}>Sign Up</Text>
+            <Text style={{color: '#351B40'}}>Sign Up</Text>
           </Button>
         </View>
       </View>
@@ -74,4 +74,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonStyle: {
+    height: 50,
+    width: '100%',
+    backgroundColor: 'white',
+    borderWidth: 4,
+    borderColor: '#351B40',
+    borderRadius: 5,
+  }
 });

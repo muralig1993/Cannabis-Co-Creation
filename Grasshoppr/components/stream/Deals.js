@@ -11,14 +11,33 @@ import {
   Section,
   TableView
 } from 'react-native-tableview-simple';
+import {
+  Container,
+  Header,
+  InputGroup,
+  Input,
+  Button,
+  Icon
+} from 'native-base';
+
 import DealCell from './DealCell';
-import DATA from '../data/deals.json';
+import DATA from '../../data/deals.json';
 
 
 export default class Deals extends React.Component<{}> {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
+          <Header searchBar rounded>
+            <InputGroup>
+                <Icon name="ios-search" />
+                <Input placeholder="Search" />
+                <Icon name="ios-people" />
+            </InputGroup>
+            <Button transparent>
+                <Text>Search</Text>
+            </Button>
+          </Header>
           <TableView>
             <Section footer="All rights reserved.">
             {

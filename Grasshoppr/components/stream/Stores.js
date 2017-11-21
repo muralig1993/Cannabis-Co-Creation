@@ -12,7 +12,7 @@ import {
   TableView
 } from 'react-native-tableview-simple';
 import StoreCell from './StoreCell';
-import DATA from '../data/stores.json';
+import DATA from '../../data/stores.json';
 
 export default class Stores extends React.Component {
   render() {

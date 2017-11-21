@@ -9,7 +9,7 @@ import {
   Cell
 } from 'react-native-tableview-simple';
 import { Button } from 'native-base';
-import Icon from '../Icon';
+import Icon from '../../Icon';
 import { Actions } from 'react-native-router-flux';
 
 const Header = (props) => (
@@ -62,6 +62,7 @@ const Section2 = (props) => (
       <Text>{props.status}</Text>
       <Button
         style={{paddingHorizontal: 10}}
+        onPress={() => Actions.store()}
       >
         <Text
           style={styles.buttonText}
@@ -87,12 +88,12 @@ const StoreCell = (props) => (
     contentContainerStyle={{ alignItems: 'flex-start', height: 'auto', paddingVertical: 10 }}
     cellContentView={
       <View
-        style={{ alignItems: 'flex-start', flexDirection: 'row', paddingVertical: 0, width: '100%' }}
+        style={{ alignItems: 'center', flexDirection: 'row', paddingVertical: 0, width: '100%', justifyContent: 'space-between' }}
       >
         <Image
-          source={require('../assets/store.png')}
+          source={require('../../assets/stores.png')}
           style={{width: 100, height: 100}}
-          resizeMode="scale-down"
+          resizeMode="contain"
         />
         <Body {...props}/>
       </View>

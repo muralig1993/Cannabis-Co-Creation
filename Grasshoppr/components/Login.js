@@ -51,20 +51,21 @@ export default class Login extends React.Component {
           placeholder='your password'
         />
         <View style={{width: '90%', paddingTop: 40}}>
-          <Button style={{height: 50, width: '100%'}}
+          <Button
+            style={styles.buttonStyle}
             block success
             onPress={() => Actions.stream()}
             >
-            <Text style={{color: 'white'}}>Login</Text>
+            <Text style={{color: '#351B40'}}>Login</Text>
           </Button>
         </View>
         <View style={{width: '90%', paddingTop: 10}}>
           <Button
-            style={{height: 50, width: '100%'}}
+            style={styles.buttonStyle}
             block success
             onPress={() => Actions.signup()}
           >
-            <Text style={{color: 'white'}}>Sign Up</Text>
+            <Text style={{color: '#351B40'}}>Sign Up</Text>
           </Button>
         </View>
       </View>
@@ -79,6 +80,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  buttonStyle: {
+    height: 50,
+    width: '100%',
+    backgroundColor: 'white',
+    borderWidth: 4,
+    borderColor: '#351B40',
+    borderRadius: 5,
+  }
 });
 
 //<Icon ios='ios-menu' android="md-menu" style={{fontSize: 50, color: 'black'}}/>

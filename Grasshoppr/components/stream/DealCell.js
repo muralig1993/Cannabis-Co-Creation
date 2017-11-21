@@ -9,7 +9,7 @@ import {
   Cell
 } from 'react-native-tableview-simple';
 import { Button } from 'native-base';
-import Icon from '../Icon';
+import Icon from '../../Icon';
 import { Actions } from 'react-native-router-flux';
 import Lightbox from 'react-native-lightbox';
 
@@ -95,7 +95,7 @@ const Body = (props) => (
     style={{ alignItems: 'flex-end', flexDirection: 'row', paddingTop: 10, width: '100%' }}
   >
     <Image
-      source={require('../assets/bluedream.png')}
+      source={require('../../assets/bluedream.png')}
       resizeMode="cover"
       style={{height: 170, width: '35%'}}
     />

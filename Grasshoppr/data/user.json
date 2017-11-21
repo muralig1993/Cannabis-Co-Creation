@@ -1,0 +1,21 @@
+[
+  {
+    "name":"Rebecca Jane",
+    "username":"rebekkaj",
+    "birthdate":"02/03/1991",
+    "email":"rebeccajane@mail.com",
+    "gender":"female",
+    "choices": [
+      "medical",
+      "420 friendly",
+      "sativa",
+      "hourly",
+      "joint",
+      "indica",
+      "blunt",
+      "bong",
+      "creative"
+    ],
+    "imgURL":""
+  }
+]

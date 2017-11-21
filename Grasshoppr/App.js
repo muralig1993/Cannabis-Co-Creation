@@ -1,21 +1,28 @@
 import React from 'react'
 import { Router, Scene, Actions } from 'react-native-router-flux';
-// import { Card, Navigation } from 'react-router-navigation'
-// import Profile from './Components/Profile'
 import { StyleSheet, Text, Platform } from 'react-native';
+
+import Deals from './components/stream/Deals'
+import Stores from './components/stream/Stores'
+import Discover from './components/stream/Discover'
+import Stream from './components/stream/Stream'
+
 import Profile from './components/Profile'
 import EditProfile from './components/EditProfile'
-import Discover from './components/Discover'
-import Deals from './components/Deals'
-import Stores from './components/Stores'
+import Login from './components/Login'
+import Signup from './components/Signup'
+
 import Deal from './components/Deal'
 import Store from './components/Store'
 import Sort from './components/Sort'
 import Filter from './components/Filter'
-import Stream from './components/Stream'
-import Login from './components/Login'
-import Signup from './components/Signup'
 import Modal from './components/Modal'
+import Layout from './components/Layout'
+
+import MessageCenter from './components/MessageCenter'
+import Suggestions from './components/Suggestions'
+
+import USERDATA from './data/user.json'
 
 const TabIcon = ({ selected, title }) => {
   return (
@@ -33,28 +40,24 @@ export default class App extends React.Component<{}> {
   render() {
     return (
       <Router
-      barButtonTextStyle={styles.barButtonTextStyle}
-      barButtonIconStyle={styles.barButtonIconStyle}
+        barButtonTextStyle={styles.barButtonTextStyle}
+        barButtonIconStyle={styles.barButtonIconStyle}
       >
         <Scene key="root"
-        title={this.state.currentScene}
-        initial
-        titleStyle={styles.title}
-        navigationBarStyle={{ backgroundColor: '#351B40', height: 70}}
-        rightTitleStyle={{color: 'white'}}
-        rightTitle='profile'
-        onRight={ ()=> Actions.profile() }
+          title={this.state.currentScene}
+          initial
         >
           <Scene
             key="login"
             component={Login}
             title="Grasshoppr"
-
+            hideNavBar={true}
           />
           <Scene
             key="profile"
-            component={Profile}
+            component={() => <Profile {...USERDATA[0]}/>}
             title="Profile"
+
           />
           <Scene
             key="editprofile"
@@ -72,6 +75,11 @@ export default class App extends React.Component<{}> {
             title="Deal"
           />
           <Scene
+            key="store"
+            component={Store}
+            title="Store"
+          />
+          <Scene
             key="modal"
             component={Modal}
             title="Modal"
@@ -81,8 +89,18 @@ export default class App extends React.Component<{}> {
           <Scene
             key="stream"
             component={Stream}
-          >
-          </Scene>
+            hideNavBar={true}
+          />
+          <Scene
+            key="messageCenter"
+            component={MessageCenter}
+            hideNavBar={true}
+          />
+          <Scene
+            key="suggestions"
+            component={Suggestions}
+            hideNavBar={true}
+          />
         </Scene>
       </Router>
     );
@@ -110,5 +128,9 @@ const styles = StyleSheet.create({
   },
   barButtonIconStyle: {
     color: 'white'
+  },
+  navbarStyle: {
+    backgroundColor: '#351B40',
+    height: 30
   }
 })
