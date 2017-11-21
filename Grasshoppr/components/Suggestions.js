@@ -30,7 +30,7 @@ const Suggestions = () => (
           <View
             style={{flexDirection: 'row', justifyContent: 'space-around', width: '100%'}}
           >
-          <Radio selected={true} />
+          <Radio selected={false} />
           <Radio selected={true} />
           <Radio selected={true} />
           <Radio selected={true} />

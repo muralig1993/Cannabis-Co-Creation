@@ -61,7 +61,7 @@ const Section2 = (props) => (
   >
       <Text>{props.status}</Text>
       <Button
-        style={{paddingHorizontal: 10}}
+        style={styles.buttonStyle}
         onPress={() => Actions.store()}
       >
         <Text
@@ -109,10 +109,18 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   },
   buttonText: {
-    color: 'white',
+    color: '#5F5F6B',
     fontFamily: 'Avenir',
     fontSize: 14,
     fontWeight: '200'
+  },
+  buttonStyle: {
+    height: 50,
+    paddingHorizontal: 10,
+    backgroundColor: 'white',
+    borderWidth: 4,
+    borderColor: '#351B40',
+    borderRadius: 5,
   }
 });
 

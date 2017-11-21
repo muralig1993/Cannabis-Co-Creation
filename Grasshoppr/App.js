@@ -57,7 +57,7 @@ export default class App extends React.Component<{}> {
             key="profile"
             component={() => <Profile {...USERDATA[0]}/>}
             title="Profile"
-
+            hideNavBar
           />
           <Scene
             key="editprofile"
@@ -73,11 +73,13 @@ export default class App extends React.Component<{}> {
             key="deal"
             component={Deal}
             title="Deal"
+            hideNavBar
           />
           <Scene
             key="store"
             component={Store}
             title="Store"
+            hideNavBar
           />
           <Scene
             key="modal"
@@ -89,7 +91,7 @@ export default class App extends React.Component<{}> {
           <Scene
             key="stream"
             component={Stream}
-            hideNavBar={true}
+            hideNavBar
           />
           <Scene
             key="messageCenter"
@@ -99,7 +101,7 @@ export default class App extends React.Component<{}> {
           <Scene
             key="suggestions"
             component={Suggestions}
-            hideNavBar={true}
+            hideNavBar
           />
         </Scene>
       </Router>

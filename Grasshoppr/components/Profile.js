@@ -8,7 +8,8 @@ import {
   ListView,
   ScrollView
 } from 'react-native';
-import Icon from '../Icon';
+import Icon from '../Icon'
+import Layout from './Layout'
 
 const Header = (props) => (
   <View
@@ -118,13 +119,15 @@ class Profile extends Component {
   }
   render() {
     return(
-      <ScrollView
-      contentContainerStyle={{alignItems: 'center', justifyContent: 'flex-start', width: '100%'}}
-      >
-        <Header {...this.props}/>
-        <Info {...this.props}/>
-        <Choices {...this.props} dataSource={this.state.dataSource}/>
-      </ScrollView>
+      <Layout>
+        <ScrollView
+        contentContainerStyle={{alignItems: 'center', justifyContent: 'flex-start', width: '100%'}}
+        >
+          <Header {...this.props}/>
+          <Info {...this.props}/>
+          <Choices {...this.props} dataSource={this.state.dataSource}/>
+        </ScrollView>
+      </Layout>
     )
   }
 
