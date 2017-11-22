@@ -5,7 +5,8 @@
     "status":"Open Now",
     "city":"Boulder, CO",
     "distance":"4",
-    "type":"MED"
+    "type":"MED",
+    "id":0,
   },
   {
     "name":"The Village Green Society",
@@ -13,7 +14,8 @@
     "status":"Open Now",
     "city":"Boulder, CO",
     "distance":"4",
-    "type":"REC"
+    "type":"REC",
+    "id":1,
   },
   {
     "name":"Trill Alternatives",
@@ -21,7 +23,8 @@
     "status":"Open Now",
     "city":"Boulder, CO",
     "distance":"4",
-    "type":"REC"
+    "type":"REC",
+    "id":2,
   },
   {
     "name":"MMJ America",
@@ -29,6 +32,7 @@
     "status":"Open Now",
     "city":"Boulder, CO",
     "distance":"4",
-    "type":"MED"
+    "type":"MED",
+    "id":3,
   }
 ]
