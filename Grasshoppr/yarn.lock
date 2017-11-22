@@ -4913,6 +4913,17 @@ react-native-gesture-handler@1.0.0-alpha.28:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-iphone-x-helper@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.0.1.tgz#950dbdaca66f458689a7e9697c5beb9bd53f98f2"
+
+react-native-keyboard-aware-scroll-view@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.4.1.tgz#bda86cbe3cdf60c572a95e7e0fbac635bc9ce66d"
+  dependencies:
+    prop-types "^15.6.0"
+    react-native-iphone-x-helper "^1.0.1"
+
 "react-native-keyboard-aware-scroll-view@https://github.com/GeekyAnts/react-native-keyboard-aware-scroll-view":
   version "0.2.9"
   resolved "https://github.com/GeekyAnts/react-native-keyboard-aware-scroll-view#f4805f254d6cc8e3329f5fb224944401f66655db"
@@ -4971,6 +4982,10 @@ react-native-scripts@1.7.0:
     qrcode-terminal "^0.11.0"
     rimraf "^2.6.1"
     xdl "46.0.1"
+
+react-native-simple-radio-button@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-simple-radio-button/-/react-native-simple-radio-button-2.7.0.tgz#0ad7e9beda7650519ca7ae479ee94cf7facd7d4e"
 
 react-native-svg-icon@^0.7.0:
   version "0.7.0"

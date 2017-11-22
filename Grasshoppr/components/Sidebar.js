@@ -24,13 +24,10 @@ const Sidebar = () => (
     >
       <List>
         <Header>
-          <Text
-            style={styles.text}
-          >Navigate</Text>
         </Header>
         <ListItem icon onPress={()=>{Actions.stream()}}>
           <Left>
-            <Icon name="Person" width={20} height={20}/>
+            <Icon name="Home" width={20} height={20}/>
           </Left>
           <Body>
             <Text

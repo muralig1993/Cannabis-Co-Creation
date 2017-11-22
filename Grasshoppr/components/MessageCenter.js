@@ -15,10 +15,10 @@ import {
     Header
   } from 'native-base';
 import Icon from '../Icon';
-import Layout from './Layout'
+import PageLayout from './PageLayout'
 
 const MessageCenter = () => (
-  <Layout>
+  <PageLayout>
     <Content>
       <Header>
           <Text>Message Center</Text>
@@ -34,7 +34,7 @@ const MessageCenter = () => (
         </ListItem>
       </List>
     </Content>
-  </Layout>
+  </PageLayout>
 )
 
 export default MessageCenter

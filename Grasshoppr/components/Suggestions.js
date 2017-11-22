@@ -2,6 +2,7 @@ import React from 'react'
 import {
   StyleSheet,
   TextInput,
+  ScrollView,
   View } from 'react-native';
 import {
     Container,
@@ -17,29 +18,26 @@ import {
     Radio
   } from 'native-base';
 import Icon from '../Icon';
-import Layout from './Layout'
+import PageLayout from './PageLayout'
+import SuggestionCell from './SuggestionCell'
 
 const Suggestions = () => (
-  <Layout>
-    <Container>
-      <List>
-        <ListItem
-        style={{flexDirection: 'column'}}
-        >
-          <Text>Rate your experience with Grasshoppr</Text>
-          <View
-            style={{flexDirection: 'row', justifyContent: 'space-around', width: '100%'}}
+  <PageLayout>
+      <Container>
+        <ScrollView>
+          <List
+            style={{width: '100%', alignItems: 'center', justifyContent: 'center'}}
           >
-          <Radio selected={false} />
-          <Radio selected={true} />
-          <Radio selected={true} />
-          <Radio selected={true} />
-          <Radio selected={true} />
-          </View>
-        </ListItem>
-      </List>
-    </Container>
-  </Layout>
+            <SuggestionCell question={"Rate your experience with our app."}/>
+            <SuggestionCell question={"How do you like the features on this app."}/>
+            <SuggestionCell question={"Is this app easy to use?"}/>
+            <SuggestionCell question={"Did you experience any bugs?"}/>
+            <SuggestionCell question={"Is the design fitting to your needs?"}/>
+            <SuggestionCell question={"Was it easy to shop?"}/>
+          </List>
+        </ScrollView>
+      </Container>
+  </PageLayout>
 )
 
 export default Suggestions

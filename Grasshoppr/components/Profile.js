@@ -9,7 +9,7 @@ import {
   ScrollView
 } from 'react-native';
 import Icon from '../Icon'
-import Layout from './Layout'
+import PageLayout from './PageLayout'
 
 const Header = (props) => (
   <View
@@ -119,7 +119,7 @@ class Profile extends Component {
   }
   render() {
     return(
-      <Layout>
+      <PageLayout>
         <ScrollView
         contentContainerStyle={{alignItems: 'center', justifyContent: 'flex-start', width: '100%'}}
         >
@@ -127,7 +127,7 @@ class Profile extends Component {
           <Info {...this.props}/>
           <Choices {...this.props} dataSource={this.state.dataSource}/>
         </ScrollView>
-      </Layout>
+      </PageLayout>
     )
   }
 
