@@ -6,7 +6,7 @@
     "city":"Boulder, CO",
     "distance":"4",
     "type":"MED",
-    "id":0,
+    "id":0
   },
   {
     "name":"The Village Green Society",
@@ -15,7 +15,7 @@
     "city":"Boulder, CO",
     "distance":"4",
     "type":"REC",
-    "id":1,
+    "id":1
   },
   {
     "name":"Trill Alternatives",
@@ -24,7 +24,7 @@
     "city":"Boulder, CO",
     "distance":"4",
     "type":"REC",
-    "id":2,
+    "id":2
   },
   {
     "name":"MMJ America",
@@ -33,6 +33,6 @@
     "city":"Boulder, CO",
     "distance":"4",
     "type":"MED",
-    "id":3,
+    "id":3
   }
 ]
