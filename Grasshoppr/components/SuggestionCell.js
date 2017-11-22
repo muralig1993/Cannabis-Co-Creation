@@ -45,6 +45,10 @@ export default class SuggestionCell extends Component {
         <RadioForm
           radio_props={this.state.radio_props}
           initial={0}
+          formHorizontal={false}
+          labelHorizontal={false}
+          buttonColor={'#2196f3'}
+          animation={true}
           style={{width: '100%', flexDirection: 'row'}}
           onPress={(value) => {this.setState({value})}}
         />
