@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "jest-expo": "^22.0.0",
+    "jest-expo": "^23.0.0",
+    "react-native-elements": "^0.18.4",
     "react-native-scripts": "1.7.0",
-    "react-test-renderer": "16.0.0-beta.5"
+    "react-test-renderer": "16.1.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -19,24 +20,28 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@expo/vector-icons": "^6.1.0",
-    "expo": "^22.0.2",
+    "@expo/vector-icons": "^6.2.0",
+    "babel-preset-expo": "^4.0.0",
+    "expo": "^22.0.4",
     "native-base": "^2.3.3",
-    "react": "16.0.0-beta.5",
-    "react-native": "^0.49.5",
+    "prop-types": "^15.6.0",
+    "react": "16.1.1",
+    "react-native": "0.49.0",
+    "react-native-animatable": "^1.2.4",
     "react-native-keyboard-aware-scroll-view": "^0.4.1",
     "react-native-lightbox": "^0.7.0",
     "react-native-maps": "^0.17.1",
-    "react-native-router-flux": "^4.0.0-beta.23",
+    "react-native-router-flux": "^4.0.0-beta.24",
     "react-native-simple-radio-button": "^2.7.0",
-    "react-native-svg": "^6.0.0",
+    "react-native-svg": "6.0.0",
     "react-native-svg-icon": "^0.7.0",
-    "react-native-svg-uri": "^1.2.1",
+    "react-native-svg-uri": "^1.2.3",
     "react-native-tableview-simple": "^0.17.1",
-    "react-navigation": "^1.0.0-beta.19",
+    "react-navigation": "^1.0.0-beta.21",
     "react-router": "^4.2.0",
     "react-router-native": "^4.2.0",
     "react-router-navigation": "^1.0.0-rc.3",
-    "svgo": "^1.0.3"
+    "svgo": "^1.0.3",
+    "wordwrap": "^1.0.0"
   }
 }

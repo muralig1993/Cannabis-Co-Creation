@@ -24,9 +24,7 @@ class Stream extends Component {
   render() {
     return (
       <Layout>
-
           <Container>
-
               <Tabs initialPage={0}>
                 <Tab heading="Deals">
                   <ScrollView>
@@ -42,9 +40,7 @@ class Stream extends Component {
                   <Discover />
                 </Tab>
               </Tabs>
-
           </Container>
-
       </Layout>
     )
   }

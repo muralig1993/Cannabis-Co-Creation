@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {
+  Platform,
   StyleSheet,
   Text,
   TextInput,
@@ -8,6 +9,7 @@ import {
   ListView,
   ScrollView
 } from 'react-native';
+import { Actions } from 'react-native-router-flux'
 import Icon from '../Icon'
 import PageLayout from './PageLayout'
 
@@ -25,8 +27,11 @@ const Header = (props) => (
       </Text>
       <Text
         style={[styles.text, styles.editLabelStyle]}
+        onPress={() => Actions.editprofile()}
       >
-        <Text><Icon name="Pencil" height="15" width="20" style={{borderColor: 'yellow'}}/></Text>
+        <Text>
+          { (Platform.OS === 'ios') ? (<Icon name="Pencil" height="15" width="20" style={{borderColor: 'yellow'}}/>) : <Text></Text>}
+        </Text>
         <Text>Edit</Text>
       </Text>
     </View>
@@ -109,6 +114,7 @@ const Choices = (props) => (
 )
 
 
+
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -123,9 +129,11 @@ class Profile extends Component {
         <ScrollView
         contentContainerStyle={{alignItems: 'center', justifyContent: 'flex-start', width: '100%'}}
         >
-          <Header {...this.props}/>
-          <Info {...this.props}/>
-          <Choices {...this.props} dataSource={this.state.dataSource}/>
+
+        <Header {...this.props}/>
+        <Info {...this.props}/>
+        <Choices {...this.props} dataSource={this.state.dataSource}/>
+
         </ScrollView>
       </PageLayout>
     )
@@ -138,31 +146,26 @@ const styles = StyleSheet.create({
     color: '#5F5F6B',
     fontFamily: 'Avenir',
     fontSize: 18,
-    fontWeight: '700'
   },
   text: {
     color: '#5F5F6B',
     fontFamily: 'Avenir',
     fontSize: 16,
-    fontWeight: '100'
   },
   buttonText: {
     color: '#5F5F6B',
     fontFamily: 'Avenir',
     fontSize: 14,
-    fontWeight: '200'
   },
   labelStyle: {
     color: '#717171',
     fontSize: 16,
     fontFamily: 'Avenir',
-    fontWeight: '700'
   },
   nameStyle: {
     color: '#717171',
     fontSize: 20,
     fontFamily: 'Avenir',
-    fontWeight: '700'
   },
   list: {
         justifyContent: 'center',

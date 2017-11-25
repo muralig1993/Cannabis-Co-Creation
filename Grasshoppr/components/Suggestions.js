@@ -23,10 +23,14 @@ import SuggestionCell from './SuggestionCell'
 
 const Suggestions = () => (
   <PageLayout>
-      <Container>
-        <ScrollView>
+      <Container
+      contentContainerStyle={{width: '100%', alignItems: 'center', justifyContent: 'space-around'}}
+      >
+        <ScrollView
+        contentContainerStyle={{width: '100%', alignItems: 'center', justifyContent: 'space-around'}}
+        >
           <List
-            style={{width: '100%', alignItems: 'center', justifyContent: 'center'}}
+            style={{width: '100%', alignItems: 'center', justifyContent: 'space-around'}}
           >
             <SuggestionCell question={"Rate your experience with our app."}/>
             <SuggestionCell question={"How do you like the features on this app."}/>

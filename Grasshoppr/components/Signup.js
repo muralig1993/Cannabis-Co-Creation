@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Platform, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Button, Content, Container } from 'native-base';
 import { G, Path } from 'react-native-svg';
 import Icon from '../Icon';
@@ -24,7 +24,7 @@ export default class Signup extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Icon name="Leaf" height="200" width="200" />
+        { (Platform.OS === 'ios') ? <Icon  name="Leaf" height="200" width="200" /> : <Text></Text>}
         <G><Path d="M0 45h90L45 0 0 45z"/><Path d="M0 55h90l-45 45L0 55z"/></G>
         <Text
         style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '90%', marginTop: 10}}

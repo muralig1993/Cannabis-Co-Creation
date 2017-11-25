@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Platform,
   Text,
   View,
   StyleSheet,
@@ -12,13 +13,14 @@ import { Button } from 'native-base';
 import Icon from '../../Icon';
 import { Actions } from 'react-native-router-flux';
 import Lightbox from 'react-native-lightbox';
+import { Icon as NativeIcon } from 'native-base';
 
 const Header = (props) => (
   <View
     style={{paddingVertical: 0, width: '100%'}}
   >
     <View
-      style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
+      style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%', alignItems: 'center'}}
     >
       <Text
         style={styles.title}
@@ -28,14 +30,14 @@ const Header = (props) => (
       <Text
         style={styles.text}
       >
-        {props.distance} miles away
+        {props.distance} mi.
       </Text>
     </View>
     <View
       style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
     >
       <Text
-        style={styles.text}
+        style={[styles.text, styles.locationText]}
       >
         {props.location}
       </Text>
@@ -48,7 +50,13 @@ const Header = (props) => (
     <View
       style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%'}}
     >
-      <Text style={styles.text}>THC: {props.THC}% CBD: {props.CBD}% CBN: {props.CBN}%</Text>
+      <View
+        style={{flexDirection: 'column'}}
+      >
+        <Text style={styles.text}>THC: {props.THC}%</Text>
+        <Text style={styles.text}>CBD: {props.CBD}%</Text>
+        <Text style={styles.text}>CBN: {props.CBN}%</Text>
+      </View>
       <Text
         style={styles.crossed}
       >
@@ -66,41 +74,47 @@ const Header = (props) => (
 
 const Footer = (props) => (
   <View
-    style={{ alignItems: 'flex-end', justifyContent: 'space-between', flexDirection: 'row', width: '100%', paddingTop: 20 }}
+    style={{ justifyContent: 'space-between', flexDirection: 'row', width: '100%', paddingTop: 20 }}
   >
-    <Text
-      style={styles.footerText}
+    <View
+    style={{width: '80%', flexDirection: 'row', justifyContent: 'space-around'}}
     >
-      <Icon
-        name="Heart"
-        height="20"
-        width="20"
-      /> {props.likes} likes
-    </Text>
-    <Text
-      style={styles.footerText}
+      <Text
+        style={styles.footerText}
+      >
+        <Text>{ (Platform.OS === 'ios') ? <Icon name="Heart" height="20" width="20"/> : <NativeIcon name="md-heart-outline" style={{fontSize: 20, color: '#5F5F6B'}}/>}</Text>
+        <Text> {props.likes} likes</Text>
+      </Text>
+      <Text
+        style={styles.footerText}
+      >
+        <Text>{ (Platform.OS === 'ios') ? <Icon name="EmptyStar" height="22" width="22"/> : <NativeIcon name="ios-star-outline" style={{fontSize: 20, color: '#5F5F6B'}}/>}</Text>
+        <Text> {props.claims} claims</Text>
+      </Text>
+    </View>
+    <View
+    style={{flexDirection: 'row', alignItems: 'flex-start'}}
     >
-      {props.claims} claims
-    </Text>
-    <Text
-      style={styles.stockText}
-    >
-      {props.stock}
-    </Text>
+      <Text
+        style={styles.stockText}
+      >
+        {props.stock}
+      </Text>
+    </View>
   </View>
 )
 
 const Body = (props) => (
   <View
-    style={{ alignItems: 'flex-end', flexDirection: 'row', paddingTop: 10, width: '100%' }}
+    style={{ alignItems: 'flex-start', flexDirection: 'row', paddingTop: 10, width: '100%', justifyContent: 'space-between' }}
   >
     <Image
       source={require('../../assets/bluedream.png')}
       resizeMode="cover"
-      style={{height: 170, width: '35%'}}
+      style={{height: '100%', width: '35%', borderRadius: 10}}
     />
     <View
-      style={{ flexDirection: 'column', width: '60%', marginLeft: '5%', height: '100%'}}
+      style={{ flexDirection: 'column', width: '62%'}}
     >
       <Header {...props}/>
       <View
@@ -151,13 +165,17 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#888',
-    fontFamily: 'Avenir-Medium',
+    fontFamily: 'Avenir',
     fontSize: 14,
     fontWeight: '100'
   },
+  locationText: {
+    width: '70%',
+    paddingBottom: 5
+  },
   quantityText: {
     color: '#5F5F6B',
-    fontFamily: 'Avenir-Heavy',
+    fontFamily: 'Avenir',
     fontSize: 20,
     fontWeight: '700'
   },
@@ -169,7 +187,10 @@ const styles = StyleSheet.create({
     color: '#5F5F6B',
     fontFamily: 'Avenir',
     fontSize: 20,
-    fontWeight: '600'
+    fontWeight: '600',
+    alignItems: 'center',
+    width: '48%',
+    justifyContent: 'space-around'
   },
   stockText: {
     color: '#5F5F6B',
@@ -188,7 +209,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: 'white',
     borderWidth: 4,
-    borderColor: '#351B40',
+    borderColor: '#5F5F6B',
     borderRadius: 5,
   }
 });

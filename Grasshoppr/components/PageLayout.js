@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {
+  Platform
+} from 'react-native'
+import {
   Drawer,
   Container,
   Content,
@@ -21,12 +24,15 @@ export default class PageLayout extends Component {
   }
 
   render(){
+    console.log(this.props.transparent);
     return(
-      <Container>
+      <Container
+      >
         <Header hasTabs={!!this.props.hasTabs}>
-          <Left>
+          <Left
+          >
             <Button transparent onPress={() => Actions.pop()}>
-              <Icon name='md-close' />
+              { (Platform.OS === 'ios') ? <Icon  name='md-close' /> : <Text></Text>}
             </Button>
           </Left>
           <Body>

@@ -1,11 +1,14 @@
 import React from 'react'
 import {
+  Platform,
   StyleSheet,
   Text,
   TextInput,
   View,
   Image } from 'react-native';
-import Icon from '../Icon';
+import Icon from '../../Icon';
+import { Icon as NativeIcon } from 'native-base';
+import PageLayout from '../PageLayout'
 
 const Header = (props) => (
   <View
@@ -33,6 +36,9 @@ const Body = (props) => (
   </View>
 )
 
+
+
+
 const Footer = (props) => (
   <View
     style={{width: '100%', justifyContent: 'space-between', flexDirection: 'row'}}
@@ -40,43 +46,37 @@ const Footer = (props) => (
     <View
     style={{flexDirection: 'row', alignItems: 'center'}}
     >
-      <Icon
-        name="Heart"
-        height="20"
-        width="20"
-      />
-      <Text>32 likes</Text>
+      { (Platform.OS === 'ios') ? <Icon name="Heart" height="20" width="20"/> : <NativeIcon name="md-heart-outline" style={{fontSize: 14, color: '#5F5F6B'}}/>}
+      <Text> 32 likes</Text>
     </View>
     <View
     style={{flexDirection: 'row', alignItems: 'center'}}
     >
-      <Icon
-        name="EmptyStar"
-        height="20"
-        width="20"
-      />
-      <Text>33 Claims</Text>
+      { (Platform.OS === 'ios') ? <Icon name="EmptyStar" height="20" width="20"/> : <NativeIcon name="ios-star-outline" style={{fontSize: 14, color: '#5F5F6B'}}/> }
+      <Text> 33 Claims</Text>
     </View>
   </View>
 )
 
 const Deal = (props) => (
-  <View
-    style={{width: '100%', height: 'auto'}}
-  >
-    <Image
-      source={require('../assets/deal.png')}
-      resizeMode="cover"
-    />
+  <PageLayout>
     <View
-    style={{paddingHorizontal: '5%'}}
+      style={{width: '100%', height: 'auto'}}
     >
-    <Text>{props.key}</Text>
-    <Header {...props}/>
-    <Body {...props}/>
-    <Footer {...props}/>
+      <Image
+        source={require('../../assets/deal.png')}
+        resizeMode="cover"
+      />
+      <View
+      style={{paddingHorizontal: '5%'}}
+      >
+      <Text>{props.key}</Text>
+      <Header {...props}/>
+      <Body {...props}/>
+      <Footer {...props}/>
+      </View>
     </View>
-  </View>
+  </PageLayout>
 )
 
 
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#888',
-    fontFamily: 'Avenir-Medium',
+    fontFamily: 'Avenir',
     fontSize: 14,
     fontWeight: '100'
   },

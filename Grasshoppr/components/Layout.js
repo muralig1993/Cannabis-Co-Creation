@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {
+  Platform
+} from 'react-native'
+import {
   Drawer,
   Container,
   Content,
@@ -9,7 +12,7 @@ import {
   Button,
   Title,
   CardItem,
-  Header, 
+  Header,
   Left,
   Icon } from 'native-base';
 import { Actions } from 'react-native-router-flux';
@@ -43,7 +46,7 @@ export default class Layout extends Component {
           <Header hasTabs={!!this.props.hasTabs}>
             <Left>
               <Button transparent onPress={() => this.openDrawer()}>
-                <Icon name='menu' />
+                { (Platform.OS === 'ios') ? <Icon  name='menu' /> : <Text></Text>}
               </Button>
             </Left>
             <Body>

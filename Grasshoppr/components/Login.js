@@ -1,5 +1,8 @@
 import React from 'react';
 import {
+  Platform
+} from 'react-native'
+import {
   StyleSheet,
   Text,
   TextInput,
@@ -29,9 +32,9 @@ export default class Login extends React.Component {
     return (
       <View style={styles.container}>
 
-        <Icon name="Leaf" height="200" width="200" />
+        { (Platform.OS === 'ios') ? <Icon  name="Leaf" height="200" width="200" /> : <Text>Leaf</Text>}
 
-        <G><Path d="M0 45h90L45 0 0 45z"/><Path d="M0 55h90l-45 45L0 55z"/></G>
+        { (Platform.OS === 'ios') ? <G><Path d="M0 45h90L45 0 0 45z"/><Path d="M0 55h90l-45 45L0 55z"/></G> : <Text></Text>}
         <Text
         style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', width: '90%', marginTop: 10}}
         >Email</Text>
@@ -89,5 +92,3 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   }
 });
-
-//<Icon ios='ios-menu' android="md-menu" style={{fontSize: 50, color: 'black'}}/>

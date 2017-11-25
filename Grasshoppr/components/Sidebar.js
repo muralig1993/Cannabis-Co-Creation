@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Platform,
   StyleSheet
  } from 'react-native';
 import {
@@ -27,7 +28,7 @@ const Sidebar = () => (
         </Header>
         <ListItem icon onPress={()=>{Actions.stream()}}>
           <Left>
-            <Icon name="Home" width={20} height={20}/>
+            { (Platform.OS === 'ios') ? <Icon  name="Home" width={20} height={20}/> : <Text></Text>}
           </Left>
           <Body>
             <Text
@@ -37,7 +38,7 @@ const Sidebar = () => (
         </ListItem>
         <ListItem icon onPress={()=>{Actions.profile()}}>
           <Left>
-            <Icon name="Person" width={20} height={20}/>
+            { (Platform.OS === 'ios') ? <Icon  name="Person" width={20} height={20}/> : <Text></Text>}
           </Left>
           <Body>
             <Text
@@ -47,7 +48,7 @@ const Sidebar = () => (
         </ListItem>
         <ListItem icon onPress={()=>{Actions.messageCenter()}}>
           <Left>
-            <Icon name="Message" width={20} height={20}/>
+            { (Platform.OS === 'ios') ? <Icon  name="Message" width={20} height={20}/> : <Text></Text>}
           </Left>
           <Body>
             <Text
@@ -57,7 +58,7 @@ const Sidebar = () => (
         </ListItem>
         <ListItem icon onPress={()=>{Actions.suggestions()}}>
           <Left>
-            <Icon name="Suggestions" width={20} height={20}/>
+            { (Platform.OS === 'ios') ? <Icon  name="Suggestions" width={20} height={20}/> : <Text></Text>}
           </Left>
           <Body>
             <Text

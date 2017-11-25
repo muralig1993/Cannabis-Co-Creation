@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Platform,
   Text,
   View,
   StyleSheet,
@@ -11,6 +12,8 @@ import {
 import { Button } from 'native-base';
 import Icon from '../../Icon';
 import { Actions } from 'react-native-router-flux';
+import mainStyles from '../../styles/mainStyles'
+import { Icon as NativeIcon } from 'native-base';
 
 const Header = (props) => (
   <View
@@ -19,7 +22,7 @@ const Header = (props) => (
     <Text
       style={styles.title}
     >{props.name}</Text>
-    <Icon name="Nav" height="20" width="20"/>
+    { (Platform.OS === 'ios') ? <Icon  name="Nav" height="20" width="20"/> : <Icon  name="md-menu" height="20" width="20"/>}
   </View>
 )
 
@@ -36,11 +39,11 @@ const Rating = (props) => (
   <View
     style={{justifyContent: 'space-between', flexDirection: 'row', width: '40%', alignItems: 'center'}}
   >
-  <Icon name="FilledStar" height="20" width="20"/>
-  <Icon name="FilledStar" height="20" width="20"/>
-  <Icon name="FilledStar" height="20" width="20"/>
-  <Icon name="HalfStar" height="20" width="20"/>
-  <Icon name="EmptyStar" height="20" width="20"/>
+  { (Platform.OS === 'ios') ? <Icon  name="FilledStar" height="20" width="20"/> : <NativeIcon name="md-star" style={{fontSize: 20, color: '#5F5F6B'}}/>}
+  { (Platform.OS === 'ios') ? <Icon  name="FilledStar" height="20" width="20"/> : <NativeIcon name="md-star" style={{fontSize: 20, color: '#5F5F6B'}}/>}
+  { (Platform.OS === 'ios') ? <Icon  name="FilledStar" height="20" width="20"/> : <NativeIcon name="md-star" style={{fontSize: 20, color: '#5F5F6B'}}/>}
+  { (Platform.OS === 'ios') ? <Icon  name="HalfStar" height="20" width="20"/> : <NativeIcon name="md-star-half" style={{fontSize: 20, color: '#5F5F6B'}}/>}
+  { (Platform.OS === 'ios') ? <Icon  name="EmptyStar" height="20" width="20"/> : <NativeIcon name="md-star-outline" style={{fontSize: 20, color: '#5F5F6B'}}/>}
   </View>
 )
 
@@ -119,7 +122,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: 'white',
     borderWidth: 4,
-    borderColor: '#351B40',
+    borderColor: '#5F5F6B',
     borderRadius: 5,
   }
 });

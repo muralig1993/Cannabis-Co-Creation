@@ -19,25 +19,36 @@ import {
   Button,
   Icon
 } from 'native-base';
+import { SearchBar } from 'react-native-elements'
+import { Actions } from 'react-native-router-flux';
 
 import DealCell from './DealCell';
 import DATA from '../../data/deals.json';
 
 
 export default class Deals extends React.Component<{}> {
+  constructor(props) {
+    super(props)
+    this.state = {
+
+    }
+    this.handleSearch = this.handleSearch.bind(this)
+  }
+  handleSearch() {
+
+  }
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
-          <Header searchBar rounded>
-            <InputGroup>
-                <Icon name="ios-search" />
-                <Input placeholder="Search" />
-                <Icon name="ios-people" />
-            </InputGroup>
-            <Button transparent>
-                <Text>Search</Text>
-            </Button>
-          </Header>
+          <SearchBar
+            round
+            lightTheme
+            onChangeText={this.handleSearch}
+            onClearText={this.handleSearch}
+            placeholder='Search for deals'
+            containerStyle={styles.searchBarContainerStyle}
+            inputStyle={styles.inputStyle}
+            />
           <TableView>
             <Section footer="All rights reserved.">
             {
@@ -61,7 +72,7 @@ export default class Deals extends React.Component<{}> {
                   type={cellData.type}
                   imageURL={cellData.imageURL}
                   titleTextColor="#007AFF"
-                  onPress={() => console.log('open Help/FAQ')}
+                  onPress={() => Actions.deal()}
                 />
               ))
             }
@@ -77,5 +88,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFEFF4',
     paddingBottom: 20,
     flex: 1
+  },
+  inputStyle: {
+    fontFamily: 'Avenir',
+    fontSize: 16,
+    backgroundColor: '#f1f1f1'
+  },
+  searchBarContainerStyle: {
+    width: '100%',
+    backgroundColor: 'white'
   }
 });

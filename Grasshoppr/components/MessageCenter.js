@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Platform,
   StyleSheet,
   TextInput,
   View } from 'react-native';
@@ -12,27 +13,37 @@ import {
     Body,
     Right,
     Thumbnail,
-    Header
+    Header,
+    Tab,
+    Tabs
   } from 'native-base';
 import Icon from '../Icon';
 import PageLayout from './PageLayout'
 
+const LatestMessages = () => (
+  <List>
+    <ListItem icon onPress={()=>{Actions.profile()}}>
+      <Left>
+        { (Platform.OS === 'ios') ? <Icon  name="Store" width={20} height={20}/> : <Text></Text>}
+      </Left>
+      <Body>
+        <Text>Terrapentine Care Station</Text>
+      </Body>
+    </ListItem>
+  </List>
+)
+
 const MessageCenter = () => (
   <PageLayout>
     <Content>
-      <Header>
-          <Text>Message Center</Text>
-      </Header>
-      <List>
-        <ListItem icon onPress={()=>{Actions.profile()}}>
-          <Left>
-            <Icon name="Store" width={20} height={20}/>
-          </Left>
-          <Body>
-            <Text>Terrapentine Care Station</Text>
-          </Body>
-        </ListItem>
-      </List>
+      <Tabs initialPage={0}>
+        <Tab heading="Latest">
+          <LatestMessages/>
+        </Tab>
+        <Tab heading="Nearby">
+          <LatestMessages/>
+        </Tab>
+      </Tabs>
     </Content>
   </PageLayout>
 )

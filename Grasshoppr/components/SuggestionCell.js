@@ -38,20 +38,20 @@ export default class SuggestionCell extends Component {
       <ListItem
       style={styles.container}
       >
-        <Text>{this.props.question}</Text>
+        <Text
+        style={{width: '100%'}}
+        >{this.props.question}</Text>
         <View
           style={styles.radioButtons}
         >
-        <RadioForm
-          radio_props={this.state.radio_props}
-          initial={0}
-          formHorizontal={false}
-          labelHorizontal={false}
-          buttonColor={'#2196f3'}
-          animation={true}
-          style={{width: '100%', flexDirection: 'row'}}
-          onPress={(value) => {this.setState({value})}}
-        />
+          <RadioForm
+            radio_props={this.state.radio_props}
+            initial={0}
+            formHorizontal={false}
+            labelHorizontal={false}
+            style={{justifyContent: 'center', paddingLeft: 0, width: '100%', flexDirection: 'row'}}
+            onPress={(value) => {this.setState({value:value})}}
+          />
         </View>
       </ListItem>
     )
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   },
   radioButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     width: '100%',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: 20
   }
