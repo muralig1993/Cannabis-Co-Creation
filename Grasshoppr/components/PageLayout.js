@@ -32,7 +32,7 @@ export default class PageLayout extends Component {
           <Left
           >
             <Button transparent onPress={() => Actions.pop()}>
-              { (Platform.OS === 'ios') ? <Icon  name='md-close' /> : <Text></Text>}
+              <Icon  name='md-close' />
             </Button>
           </Left>
           <Body>

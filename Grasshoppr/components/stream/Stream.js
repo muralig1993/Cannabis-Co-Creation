@@ -25,7 +25,7 @@ class Stream extends Component {
     return (
       <Layout>
           <Container>
-              <Tabs initialPage={0}>
+              <Tabs initialPage={0} tabBgColor='white'>
                 <Tab heading="Deals">
                   <ScrollView>
                     <Deals />

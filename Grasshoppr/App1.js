@@ -53,7 +53,13 @@ export default class App1 extends React.Component<{}> {
             key="login"
             component={Login}
             title="Grasshoppr"
-            hideNavBar={true}
+            hideNavBar
+          />
+          <Scene
+            key="profile"
+            component={() => <Profile {...USERDATA[0]} />}
+            title="Profile"
+            hideNavBar
           />
           <Scene
             key="editprofile"
@@ -92,7 +98,7 @@ export default class App1 extends React.Component<{}> {
           <Scene
             key="messageCenter"
             component={MessageCenter}
-            hideNavBar={true}
+            hideNavBar
           />
           <Scene
             key="suggestions"

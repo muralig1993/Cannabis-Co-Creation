@@ -46,7 +46,7 @@ export default class Layout extends Component {
           <Header hasTabs={!!this.props.hasTabs}>
             <Left>
               <Button transparent onPress={() => this.openDrawer()}>
-                { (Platform.OS === 'ios') ? <Icon  name='menu' /> : <Text></Text>}
+                <Icon name='menu' />
               </Button>
             </Left>
             <Body>

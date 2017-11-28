@@ -5,18 +5,13 @@ import {
   Text,
   TextInput,
   View,
-  ScrollView,
   Image } from 'react-native';
 import Icon from '../../Icon';
-import StoreHeader from './StoreHeader'
-import PageLayout from '../PageLayout'
 
-const Store = (props) => (
-  <PageLayout>
-    <ScrollView>
-      <StoreHeader/>
-    </ScrollView>
-  </PageLayout>
+const StoreMenu = (props) => (
+  <View>
+    <StoreHeader/>
+  </View>
 )
 
 const styles = StyleSheet.create({
@@ -32,4 +27,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Store
+export default StoreMenu

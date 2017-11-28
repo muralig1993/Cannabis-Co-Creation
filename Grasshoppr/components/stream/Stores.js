@@ -13,6 +13,7 @@ import {
 } from 'react-native-tableview-simple';
 import StoreCell from './StoreCell';
 import DATA from '../../data/stores.json';
+import { Actions } from 'react-native-router-flux';
 
 export default class Stores extends React.Component {
   render() {
@@ -31,7 +32,7 @@ export default class Stores extends React.Component {
                   distance={cellData.distance}
                   type={cellData.type}
                   imageURL={cellData.imageURL}
-                  onPress={() => console.log('open Help/FAQ')}
+                  onPress={() => Actions.store()}
                 />
               ))
             }

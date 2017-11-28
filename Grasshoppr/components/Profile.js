@@ -52,7 +52,7 @@ const Info = (props) => (
     style={{width: '100%', flexDirection: 'row', paddingHorizontal: '10%'}}
   >
     <View
-      style={{width: '50%', alignItems: 'flex-start'}}
+      style={{width: '30%', alignItems: 'flex-start'}}
     >
       <Text
         style={styles.labelStyle}
@@ -71,7 +71,7 @@ const Info = (props) => (
       </Text>
     </View>
     <View
-      style={{width: '50%', alignItems: 'flex-end'}}
+      style={{width: '70%', alignItems: 'flex-end'}}
     >
       <Text
         style={styles.text}
@@ -94,7 +94,7 @@ const Info = (props) => (
 
 const Choices = (props) => (
   <View
-    style={{paddingTop: 20}}
+    style={{paddingVertical: 20}}
   >
     <ListView contentContainerStyle={styles.list}
         dataSource={props.dataSource}
