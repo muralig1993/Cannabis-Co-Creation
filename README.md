@@ -1,2 +1,2 @@
 # Grasshoppr
-App for e commerce.
+Socio Commerce platform for cannabis enthusiasts
